@@ -28,5 +28,25 @@ Example of XML output
 </config>
 ```
 
+* substitution_group
 
-* example_2
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:ns1="http://NamespaceTest.com/DerivedTypes" xmlns:ns2="http://NamespaceTest.com/Derived2Types">
+    <person id="1">
+        <first-name>Alex</first-name>
+        <last-name>L</last-name>
+        <gender>male</gender>
+        <age>32</age>
+    </person>
+    <derived1 extra-text="Hello World!">
+        <ns1:var1>my value 1</ns1:var1>
+    </derived1>
+    <derived2 extra-text="Hello Universe!">
+        <ns2:var3>my perfect value 1</ns2:var3>
+    </derived2>
+</config>
+```
+
+* substitution_group_multi_xsd
+TODO

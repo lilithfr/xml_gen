@@ -40,7 +40,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- <xs:element name="derived2" type="drv2:derived2" substitutionGroup="item"/> -->
+    <xs:element name="item_group" abstract="true"/>
+    <xs:element name="derived1" type="drv:derived" substitutionGroup="item_group"/>
+    <xs:element name="derived2" type="drv2:derived2" substitutionGroup="item_group"/>
 
     <xs:element name="root">
         <xs:complexType>
@@ -48,7 +50,7 @@
                 <xs:element name="person" type="person_t" minOccurs="0" maxOccurs="unbounded"/>
 
                 <!-- substitution group root -->
-                <xs:element name="item" type="cmn:base" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="item_group" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

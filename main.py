@@ -23,16 +23,18 @@ class Foo:
         self.doc.person.append(p)
 
     def add_default_derived(self):
-        d = drv.derived()
+        d = xsd.derived1()
+        #d = drv.derived()
         d.extra_text = "Hello World!"
         d.var1 = "my value 1"
-        self.doc.item.append(d)
+        self.doc.item_group.append(d)
 
     def add_default_derived2(self):
-        d = drv2.derived2()
+        #d = drv2.derived2()
+        d = xsd.derived2()
         d.extra_text = "Hello Universe!"
         d.var3 = "my perfect value 1"
-        self.doc.item.append(d)
+        self.doc.item_group.append(d)
 
     def gen(self):
         f = open("output.xml", "wb")
@@ -48,7 +50,7 @@ def test():
     f.gen()
 
 def load():
-    rxml = open('xsd/people.xml').read()
+    rxml = open('xsd/example.xml').read()
     doc = xsd.CreateFromDocument(rxml)
     print("{}".format(doc))
 
