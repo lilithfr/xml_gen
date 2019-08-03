@@ -67,3 +67,5 @@ Example of XML output
     </ns2:derived2>
 </config>
 ```
+
+* substitution_group_multi_xsd_folder

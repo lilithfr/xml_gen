@@ -6,7 +6,7 @@
         xmlns="http://NamespaceTest.com/Derived2Types"
         elementFormDefault="qualified">
 
-    <xs:import schemaLocation="base.xsd" namespace="http://NamespaceTest.com/BaseTypes"/>
+    <xs:import schemaLocation="../../common/base.xsd" namespace="http://NamespaceTest.com/BaseTypes"/>
 
     <xs:element name="derived1" substitutionGroup="cmn:item_group">
         <xs:complexType>

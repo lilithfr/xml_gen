@@ -3,7 +3,7 @@
         xmlns:ns1="http://NamespaceTest.com/DerivedTypes"
         xmlns:ns2="http://NamespaceTest.com/Derived2Types"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="person.xsd">
+        xsi:noNamespaceSchemaLocation="app/person.xsd">
 
     <person id="1">
         <first-name>John</first-name>

@@ -6,9 +6,9 @@
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         elementFormDefault="qualified">
 
-    <xs:import schemaLocation="base.xsd" namespace="http://NamespaceTest.com/BaseTypes"/>
-    <xs:import schemaLocation="derived.xsd" namespace="http://NamespaceTest.com/DerivedTypes"/>
-    <xs:import schemaLocation="derived2.xsd" namespace="http://NamespaceTest.com/Derived2Types"/>
+    <xs:import schemaLocation="../common/base.xsd" namespace="http://NamespaceTest.com/BaseTypes"/>
+    <xs:import schemaLocation="../sub/drv1/derived.xsd" namespace="http://NamespaceTest.com/DerivedTypes"/>
+    <xs:import schemaLocation="../sub/drv2/derived2.xsd" namespace="http://NamespaceTest.com/Derived2Types"/>
 
     <xs:simpleType name="gender_t">
         <xs:restriction base="xs:string">
