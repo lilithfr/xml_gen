@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema
+        xmlns:cmn="http://NamespaceTest.com/BaseTypes"
+        xmlns:drv="http://NamespaceTest.com/DerivedTypes"
+        xmlns:drv2="http://NamespaceTest.com/Derived2Types"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified">
+
+    <xs:import schemaLocation="base.xsd" namespace="http://NamespaceTest.com/BaseTypes"/>
+    <xs:import schemaLocation="derived.xsd" namespace="http://NamespaceTest.com/DerivedTypes"/>
+    <xs:import schemaLocation="derived2.xsd" namespace="http://NamespaceTest.com/Derived2Types"/>
+
+    <xs:simpleType name="gender_t">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="male"/>
+            <xs:enumeration value="female"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="person_t">
+        <xs:sequence>
+            <xs:element name="first-name" type="xs:string"/>
+            <xs:element name="middle-name" type="xs:string" minOccurs="0"/>
+            <xs:element name="last-name" type="xs:string"/>
+            <xs:element name="gender" type="gender_t"/>
+            <xs:element name="age" type="xs:short"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="people_t">
+        <xs:sequence>
+            <xs:element name="person" type="person_t" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="root_type">
+        <xs:sequence>
+            <xs:element name="item" type="cmn:base" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- <xs:element name="derived2" type="drv2:derived2" substitutionGroup="item"/> -->
+
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="person_t" minOccurs="0" maxOccurs="unbounded"/>
+
+                <!-- substitution group root -->
+                <xs:element name="item" type="cmn:base" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
