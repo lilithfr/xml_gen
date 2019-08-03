@@ -3,6 +3,7 @@
         xmlns:cmn="http://NamespaceTest.com/BaseTypes"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://NamespaceTest.com/Derived2Types"
+        xmlns="http://NamespaceTest.com/Derived2Types"
         elementFormDefault="qualified">
 
     <xs:import schemaLocation="base.xsd" namespace="http://NamespaceTest.com/BaseTypes"/>
@@ -19,6 +20,6 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <!-- <xs:element name="derived2" type="derived2" substitutionGroup="item"/> -->
+    <xs:element name="derived2" type="derived2" substitutionGroup="cmn:item_group"/>
 
 </xs:schema>

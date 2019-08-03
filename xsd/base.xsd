@@ -7,4 +7,5 @@
         <xs:attribute name="text" type="xs:string"/>
     </xs:complexType>
 
+    <xs:element name="item_group" abstract="true"/>
 </xs:schema>

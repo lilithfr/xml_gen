@@ -23,7 +23,7 @@ class Foo:
         self.doc.person.append(p)
 
     def add_default_derived(self):
-        d = xsd.derived1()
+        d = drv.derived1()
         #d = drv.derived()
         d.extra_text = "Hello World!"
         d.var1 = "my value 1"
@@ -31,7 +31,7 @@ class Foo:
 
     def add_default_derived2(self):
         #d = drv2.derived2()
-        d = xsd.derived2()
+        d = drv2.derived2()
         d.extra_text = "Hello Universe!"
         d.var3 = "my perfect value 1"
         self.doc.item_group.append(d)
